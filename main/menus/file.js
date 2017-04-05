@@ -12,16 +12,6 @@ const template = [
     label: 'Test',
     submenu: [
       {
-        label: 'Open',
-        click: () => {
-          global.newProj = false;
-          const rootDir = dialog.showOpenDialog({ properties: ['openDirectory'] });
-          if (rootDir) {
-            global.mainWindow.webContents.send('openDir', rootDir[0]);
-          }
-        }
-      },
-      {
         label: 'Save',
         click: () => {
           const save = dialog.showSaveDialog();
@@ -29,6 +19,16 @@ const template = [
             copy('./lib/temp/new-project', save[0]);
           }
           global.mainWindow.webContents.send('openDir', save[0]);
+        }
+      },
+      {
+        label: 'Open',
+        click: () => {
+          global.newProj = false;
+          const rootDir = dialog.showOpenDialog({ properties: ['openDirectory'] });
+          if (rootDir) {
+            global.mainWindow.webContents.send('openDir', rootDir[0]);
+          }
         }
       },
       {
