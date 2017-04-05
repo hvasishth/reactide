@@ -15,6 +15,7 @@ export default class FileTree extends React.Component {
     if (this.props.fileTree) {
       return (
         <div className="item-views">
+          <div className="chat-widget"></div>
           <div className="styleguide pane-item">
             <header className="styleguide-header">
               <h5>File Directory</h5>
